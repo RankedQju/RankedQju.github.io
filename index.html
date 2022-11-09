@@ -43,12 +43,26 @@
         max-height: 100vh;
         margin: 0;
     }
+
+    .container {
+        height: 50px;
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .logo {
+        width: 60px;
+        height: 50px;
+        padding-left: 10px;
+        max-height: 50px;
+        max-width: 90px;
+    }
 </style>
 
 <body>
-    <div style="height: 50px; background-color: white; display: flex; flex-direction: row;">
-        <img style="width: 60px; height: 50px; padding-left: 10px; max-height: 50px; max-width: 90px;"
-            src="./images/yee.webp">
+    <div class="container">
+        <img class="logo" src="./images/yee.webp">
         <div class="buttons">
             <div class="button" onclick="changeVideo(this,'aaLRUVfkizw')"><span selected class="un">YEE</span></div>
             <div class="button" onclick="changeVideo(this,'0_cBuTJm7qU')"><span class="un">WIP</span></div>
@@ -57,7 +71,7 @@
         </div>
     </div>
     <div>
-        <div style="width: 100%; height: 100vh;" id="ytplayer"></div>
+        <div style="width: 100%; height: calc(100vh - 50px);" id="ytplayer"></div>
     </div>
 
     <script>
