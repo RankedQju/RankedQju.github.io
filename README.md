@@ -1,0 +1,1 @@
+https://rankedqju.github.io/
