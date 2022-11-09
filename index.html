@@ -8,9 +8,36 @@
 <style>
     .button {
         display: flex;
-        align-self: center;
+        align-items: center;
         font-size: 16px;
     }
+
+    .un {
+        display: inline-block;
+    }
+
+    .un::after {
+        content: '';
+        width: 0px;
+        height: 1px;
+        display: block;
+        background: black;
+        transition: 300ms;
+    }
+
+    .un:hover::after {
+        width: 100%;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        padding-left: 5%;
+        width: 100%;
+        color: #555;
+    }
+
 
     body {
         font-family: 'Roboto';
@@ -21,12 +48,15 @@
 </style>
 
 <body>
-    <div style="height: 50px; background-color: white; display: flex; flex-direction: row; gap: 10px">
-        <img style="max-height: 50px; max-width: 90px;" src="./images/yee.png">
-        <span class="button">Button 1</span>
-        <span class="button">Button 2</span>
-        <span class="button">Button 3</span>
-        <span class="button">Button 4</span>
+    <div style="height: 50px; background-color: white; display: flex; flex-direction: row;">
+        <img style="width: 60px; height: 50px; padding-left: 10px; max-height: 50px; max-width: 90px;"
+            src="./images/yee.webp">
+        <div class="buttons">
+            <div class="button"><span class="un">YEE</span></div>
+            <!-- <div class="button"><span class="un">WIP</span></div>
+            <div class="button"><span class="un">WIP</span></div>
+            <div class="button"><span class="un">WIP</span></div> -->
+        </div>
     </div>
     <div>
         <div style="width: 100%; height: 100vh;" id="ytplayer"></div>
