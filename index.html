@@ -12,22 +12,20 @@
         font-size: 16px;
     }
 
-    .un {
+    span[selected].un {
         display: inline-block;
     }
 
-    .un::after {
+    span[selected].un::after {
         content: '';
         width: 0px;
         height: 1px;
         display: block;
         background: black;
         transition: 300ms;
-    }
-
-    .un:hover::after {
         width: 100%;
     }
+
 
     .buttons {
         display: flex;
@@ -52,9 +50,9 @@
         <img style="width: 60px; height: 50px; padding-left: 10px; max-height: 50px; max-width: 90px;"
             src="./images/yee.webp">
         <div class="buttons">
-            <div class="button"><span class="un">YEE</span></div>
+            <div class="button" onclick="changeVideo(this,'aaLRUVfkizw')"><span selected class="un">YEE</span></div>
+            <div class="button" onclick="changeVideo(this,'0_cBuTJm7qU')"><span class="un">WIP</span></div>
             <!-- <div class="button"><span class="un">WIP</span></div>
-            <div class="button"><span class="un">WIP</span></div>
             <div class="button"><span class="un">WIP</span></div> -->
         </div>
     </div>
@@ -76,6 +74,13 @@
                 width: '640',
                 videoId: 'aaLRUVfkizw'
             });
+        }
+
+        function changeVideo(video, videoId) {
+            document.querySelectorAll("[selected]").forEach((selectedVideo) => selectedVideo.removeAttribute("selected"))
+            video.firstChild.setAttribute("selected", "")
+
+            document.querySelector("iframe").src = "https://www.youtube.com/embed/" + videoId + "?enablejsapi=1&widgetid=1"
         }
     </script>
 </body>
