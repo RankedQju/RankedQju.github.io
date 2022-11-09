@@ -5,28 +5,27 @@
     <title>WONDERFUL TIME</title>
 </head>
 
-<body>
-    <div style="display: flex; justify-content: center;">
-        <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%;">
-            <div style="position: absolute; top:0; left:0; width: 100%; height: 100%;" id="ytplayer"></div>
-        </div>
+<body style="max-height: 100vh;">
+    <div>
+        <div style="position: absolute; top:0; left:0; width: 100%; height: 100vh;" id="ytplayer"></div>
+    </div>
 
-        <script>
-            var tag = document.createElement('script');
-            tag.src = "https://www.youtube.com/player_api";
-            var firstScriptTag = document.getElementsByTagName('script')[0];
-            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    <script>
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/player_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 
-            var player;
-            function onYouTubePlayerAPIReady() {
-                player = new YT.Player('ytplayer', {
-                    height: '360',
-                    width: '640',
-                    videoId: 'aaLRUVfkizw'
-                });
-            }
-        </script>
+        var player;
+        function onYouTubePlayerAPIReady() {
+            player = new YT.Player('ytplayer', {
+                height: '360',
+                width: '640',
+                videoId: 'aaLRUVfkizw'
+            });
+        }
+    </script>
 </body>
 
 </html>
